@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="filesaver.js" defer></script>
+    <script src="app.js" defer></script>
+    <title>LiveEdit</title>
+  </head>
+  <body onload="run()">
+    <nav>
+      <p>LiveEdit</p>
+      <a
+        href="#output"
+        class="btn"
+        onclick="toggleFullscreenEditor()"
+        id="toggle-fullscreen"
+      >
+        <span class="material-icons">open_in_full</span>
+      </a>
+    </nav>
+    <div class="wrapper flex" id="wrapper">
+      <div class="editor">
+        <div class="field" id="html">
+          <div class="header">
+            <p>HTML</p>
+            <a href="#css" tabindex="-1">CSS</a
+            ><a href="#js" tabindex="-1">JS</a>
+          </div>
+          <textarea
+            id="html-code"
+            class="input"
+            autocapitalize="off"
+            spellcheck="false"
+          >
+<!-- FluidCSS stylesheet [optional] -->
+
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nikhilmwarrier/fluidcss@latest/fluid.css">
+
+
+&lt;button class="btn">Click me!&lt;/button>
+        </textarea
+          >
+        </div>
+        <div class="field" id="css">
+          <div class="header">
+            <a href="#html" tabindex="-1">HTML</a>
+            <p>CSS</p>
+            <a href="#js" tabindex="-1">JS</a>
+          </div>
+          <!-- 
+
+             <textarea id="code-input" aria-controls="code-highlighter" class="input" autocapitalize="off" spellcheck="false"></textarea>
+    <output id="code-output" role="status" class="highlighted-output javascript"></output>
+           -->
+          <textarea
+            id="css-code"
+            class="input"
+            autocapitalize="off"
+            spellcheck="false"
+          >
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+</textarea
+          >
+        </div>
+        <div class="field" id="js">
+          <div class="header">
+            <a href="#html" tabindex="-1">HTML</a
+            ><a href="#css" tabindex="-1">CSS</a>
+            <p>JS</p>
+          </div>
+          <textarea
+            id="js-code"
+            class="input"
+            autocapitalize="off"
+            spellcheck="false"
+          >
+//Nothing to see here
+        </textarea
+          >
+        </div>
+      </div>
+      <button class="btn" id="save">
+        Save to device &nbsp;
+        <span class="material-icons">save_alt</span>
+      </button>
+      <iframe id="output"></iframe>
+    </div>
+  </body>
+</html>
